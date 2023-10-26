@@ -1,0 +1,114 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    gap: 0.6rem;
+}
+
+.card {
+    position: relative;
+    width: 80px;
+    height: 120px;
+    perspective: 1000px;
+    cursor: pointer;
+}
+
+.card-face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 1s;
+}
+
+
+.card-front,
+.card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(107, 43, 226);
+    font-size: 2rem;
+    text-align: center;
+    line-height: 120px;
+    border-radius: 5px;
+    backface-visibility: hidden;
+    user-select: none;
+    color: rgb(255, 206, 43);
+}
+
+.card-front {
+    background-color: rgba(255, 205, 43, 0.753);
+    border: 1px solid yellow;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+}
+
+.card-front img {
+    width: 100px;
+}
+
+.card-front {
+    transform: rotateY(180deg);
+}
+
+.flip .card-face{
+    transform: rotateY(180deg);
+    transition: transform 0.5s;
+}
+
+.endgame {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: transparent;
+    width: 100vw;
+    height: 100vh;
+    font-size: 2rem;
+    display: none;
+}
+
+.endgame button {
+    padding: 8px 40px;
+    outline: none;
+    background: rgb(78, 16, 247);
+    border: 0;
+    color: #fff;
+    font-weight: 500;
+    letter-spacing: 1.2px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.endgame button:hover {
+    background: hsl(250, 94%, 52%);
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    background: rgba(152, 97, 255, 0.452);
+    border-radius: 5px;
+}
